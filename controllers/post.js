@@ -32,4 +32,15 @@ const create = async (req, res) => {
   }
 }
 
-module.exports = {create};
+const get = async (req, res) => {
+  try {
+    // Find all posts
+    const posts = await Post.find();
+
+    res.json(posts);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to retrieve posts' });
+  }
+}
+
+module.exports = {create, get};
