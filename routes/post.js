@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {create, get} = require('../controllers/post');
+const {create, get, singleItem} = require('../controllers/post');
 
 /**
  * create user or register
@@ -8,6 +8,7 @@ const {create, get} = require('../controllers/post');
 
 router.post('/', create);
 router.get('/', get);
+router.get('/:id', singleItem);
 
 
 

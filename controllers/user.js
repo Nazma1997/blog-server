@@ -62,6 +62,16 @@ const login =async(req, res) => {
     res.status(500).json({ error: 'Failed to log in' });
   }
 };
+const get = async (req, res) => {
+  try {
+    // Find all posts
+    const users = await User.find();
+
+    res.json(users);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to retrieve posts' });
+  }
+};
 
 
-module.exports ={create, login}
+module.exports ={create, login, get}

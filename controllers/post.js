@@ -41,6 +41,23 @@ const get = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: 'Failed to retrieve posts' });
   }
-}
+};
 
-module.exports = {create, get};
+const singleItem = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    // Find a post by ID
+    const post = await Post.findById(id);
+
+    if (!post) {
+      return res.status(404).json({ error: 'Post not found' });
+    }
+
+    res.json(post);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to retrieve post' });
+  }
+};
+
+module.exports = {create, get, singleItem};
