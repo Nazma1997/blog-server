@@ -2,7 +2,7 @@ const User = require('../models/User')
 const Post = require('../models/Post')
 
 const create = async (req, res) => {
-  const { email, title, shortDescription, fullDescription,image, createdAt, tag, name,  } = req.body;
+  const { email, title, shortDescription, fullDescription,image, createdAt, tag, name,author  } = req.body;
 
   try {
     // Find the user by email
@@ -14,7 +14,7 @@ const create = async (req, res) => {
 
     // Create a new post
     const post = new Post({
-      email, title, shortDescription, fullDescription,image, createdAt, tag, name
+      email, title, shortDescription, fullDescription,image, createdAt, tag, name, author
     });
 
     // Save the post to the database
