@@ -26,7 +26,7 @@ const create = async (req, res) => {
     // Save the updated user with the new post
     await user.save();
 
-    res.json({ message: 'Post created successfully' });
+    res.json({ message: 'Post created successfully', post });
   } catch (error) {
     res.status(500).json({ error: 'Failed to create post' });
   }
