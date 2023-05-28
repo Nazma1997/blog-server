@@ -3,21 +3,21 @@ const mongoose = require('mongoose');
 const postSchema = new mongoose.Schema({
   title: {
     type: String,
-    // required: true,
+    required: true,
    
   },
   shortDescription: {
     type: String,
-    // required: true
+    required: true
   },
   fullDescription: {
     type: String,
-    // required: true,
+    required: true,
     // unique: true
   },
   image: {
     type: String,
-    // required: true
+    required: true
   },
   createdAt: {
     type: Date,
@@ -25,7 +25,7 @@ const postSchema = new mongoose.Schema({
   },
   tag:{
     type: String,
-    // required: true
+    required: true
   },
   name:{
     type: String,
